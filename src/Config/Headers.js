@@ -1,1 +1,1 @@
-export const Headers = ["Main", "Blog", "Contact"];
+export const Headers = ["Main", "Resume", "Contact"];
