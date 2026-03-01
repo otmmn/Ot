@@ -6,12 +6,7 @@ export const Main = () => {
     return Math.floor(Math.random() * index);
   };
 
-  const motivationalQuotesIndex = (index) => {
-    return Math.floor(Math.random() * index);
-  };
-
   const timeQuotes = Quotes.timeQuotes;
-  const motivationalQuotes = Quotes.motivationalQuotes;
 
   return (
     <div>
@@ -19,13 +14,6 @@ export const Main = () => {
         {Timer.hours}:{Timer.minutes}:{Timer.seconds}
         <p className="text-xl my-7">
           {timeQuotes[timeQuotesIndex(timeQuotes.length)]}
-        </p>
-        <p>
-          {
-            motivationalQuotes[
-              motivationalQuotesIndex(motivationalQuotes.length)
-            ]
-          }
         </p>
       </div>
     </div>
