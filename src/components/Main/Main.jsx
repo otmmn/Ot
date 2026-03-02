@@ -6,12 +6,13 @@ export const Main = () => {
     return Math.floor(Math.random() * index);
   };
 
-  const timeQuotes = Quotes.timeQuotes;
+  const { hours, minutes, seconds } = Timer;
+  const { timeQuotes } = Quotes;
 
   return (
     <div>
       <div className="flex flex-col items-center justify-center height text-7xl py-10 border-b-5">
-        {Timer.hours}:{Timer.minutes}:{Timer.seconds}
+        {hours}:{minutes}:{seconds}
         <p className="text-xl my-7">
           {timeQuotes[timeQuotesIndex(timeQuotes.length)]}
         </p>
