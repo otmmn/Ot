@@ -1,7 +1,7 @@
 import { Quotes } from "../../Config/Quotes";
 import { Timer } from "../../Config/Timer";
 
-export const Main = () => {
+export const Panel = () => {
   const timeQuotesIndex = (index) => {
     return Math.floor(Math.random() * index);
   };
