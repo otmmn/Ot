@@ -48,6 +48,7 @@ export const DisplayTasks = () => {
                   onClick={handleTaskStatus}
                 />{" "}
                 {Task.name}
+                <p>Commit testing</p>
               </li>
             );
           })}
