@@ -6,12 +6,16 @@ import { Checkbox } from "../ui/checkbox";
 export const DisplayTasks = () => {
   const [unfinishedTasks, setUnfinishedTasks] = useState([]);
   const [finishedTasks, setFinishedTasks] = useState([]);
-  const [checked, setChecked] = useState(false);
+  const [checkedTasks, setCheckedTasks] = useState({});
 
   useEffect(() => {
     setUnfinishedTasks(Tasks.filter((Task) => !Task.isFinished));
     setFinishedTasks(Tasks.filter((Task) => Task.isFinished));
   }, []);
+
+  const handleCheckBox = (id, value) => {
+    setCheckedTasks((prevState) => ({ ...prevState, [id]: value }));
+  };
 
   return (
     <div className="flex justify-center pt-10 min-h-screen">
@@ -23,7 +27,11 @@ export const DisplayTasks = () => {
             orientation="horizontal"
             className="text-xl pt-7"
           >
-            <Checkbox /> {Task.name}
+            <Checkbox
+              checked={checkedTasks[Task.id] || false}
+              onCheckedChange={(value) => handleCheckBox(Task.id, value)}
+            />{" "}
+            {Task.name}
           </Field>
         ))}
       </div>
